@@ -1,0 +1,161 @@
+*{margin: 0; padding: 0;}
+a{text-decoration: none; color: inherit}
+li{list-style: none;}
+em, i, address{font-style: normal;}
+
+
+
+body{
+    width: 100vw;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    background-image: url(../image/bg-img.avif);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+/*입력창 + 투두창*/
+#todo{
+    max-width: 1200px;;
+    height: 100%;
+    margin: 0 auto;
+}
+#todo h1{
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+}
+/*투두 입력란*/
+#input-wrapper{
+    position: relative;
+    margin-bottom: 20px;
+    width: 230px;
+}
+#todo-input{
+    outline: none;
+    padding: 5px 10px;
+    padding-right: 25px;
+    width: 195px;
+    height: 28px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: none;
+    font-size: 25px;
+    color: #fff;
+}
+#input-wrapper button{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 35px;
+    background: none;
+    color: #f3c8ed;
+    border: none;
+    cursor: pointer;
+
+}
+/*투두목록 컨테이너*/
+#todo-container{
+    max-width: 1200px;
+    height: calc(100% - 108px);
+    margin: 0 auto;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+    background-color: #ffffffcf;
+    background-image:
+    linear-gradient(#eee .1em, transparent .1em);
+    background-size: 100% 1.2em;
+}
+
+/*투두 제목*/
+
+#todo-container #todo-title{
+    background-color: #fff;
+    height: 50px;
+    padding: 0 10px;
+    line-height: 50px;
+    border-bottom: 1px solid #ccc;
+}
+#todo-container #todo-title li{
+    float: left;
+    cursor: pointer;
+    width: 100px;
+    text-align: center;
+}
+/*투두 목록*/
+#todo-container #todo-content{
+    padding: 0 20px;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+#todo-container #todo-content .content-inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    margin-bottom: 10px;
+    padding: 0 10px;
+   
+}
+#todo-container #todo-content .content-inner div:first-of-type{
+    width: 80%;
+    height: 100%;
+    line-height: 40px;
+    
+   
+}
+#todo-container #todo-content .content-inner div:first-of-type p{
+    width: 100%;
+    height: 100%; 
+    padding-left: 30px;
+    box-sizing: border-box;
+    background-color: rgba(238, 207, 213, 0.492);
+}
+#todo-container #todo-content .button-wrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+    height: 100%;
+    border: 2px solid rgba(238, 207, 213, 0.492);
+    box-sizing: border-box;
+}
+#todo-container #todo-content .button-wrapper button{
+    border: none;
+    background:none;
+    cursor: pointer;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    font-weight: bold;
+    color: #515151;
+    
+}
+#todo-container #todo-content .button-wrapper button:first-of-type{
+    
+}
+#todo-container #todo-content .button-wrapper button:first-of-type:hover{
+    color: #90ade3;
+}
+#todo-container #todo-content .button-wrapper button:last-of-type:hover{
+    color: #fb5489;
+}
+
+.todo-done{
+text-decoration: line-through;
+color: #ccc;
+background: none !important;
+border: 2px solid rgba(238, 207, 213, 0.492);
+box-sizing: border-box;
+border-right: none;
+}
+
+@media all and (max-width:700px){
+    #todo-container #todo-content .content-inner div:first-of-type{
+        width: 60%;
+        font-size: 12px;
+    }
+    #todo-container #todo-content .button-wrapper{
+        width: 40%;
+        font-size: 12px;
+    }
+}
