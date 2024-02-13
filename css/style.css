@@ -143,8 +143,6 @@ body{
 .todo-done{
 text-decoration: line-through;
 color: #ccc;
-background: none !important;
-border: 2px solid rgba(238, 207, 213, 0.492);
 box-sizing: border-box;
 border-right: none;
 }
