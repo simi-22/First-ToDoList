@@ -2,29 +2,27 @@
 a{text-decoration: none; color: inherit}
 li{list-style: none;}
 em, i, address{font-style: normal;}
-
+@font-face {
+    font-family: 'SUITE-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
 
 
 body{
-    width: 100vw;
-    height: 100vh;
     padding: 20px;
     box-sizing: border-box;
-    background-image: url(../image/bg-img.avif);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    font-family: 'SUITE-Regular';
 }
 /*입력창 + 투두창*/
 #todo{
-    max-width: 1200px;;
-    height: 100%;
-    margin: 0 auto;
+    
 }
 #todo h1{
     height: 40px;
     line-height: 40px;
-    color: #fff;
+    color: #000;
 }
 /*투두 입력란*/
 #input-wrapper{
@@ -39,10 +37,10 @@ body{
     width: 195px;
     height: 28px;
     border: none;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #323232;
     background: none;
-    font-size: 25px;
-    color: #fff;
+    font-size: 15px;
+    color: #323232;
 }
 #input-wrapper button{
     position: absolute;
@@ -57,9 +55,6 @@ body{
 }
 /*투두목록 컨테이너*/
 #todo-container{
-    max-width: 1200px;
-    height: calc(100% - 108px);
-    margin: 0 auto;
     box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
     background-color: #ffffffcf;
     background-image:
