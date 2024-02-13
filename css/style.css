@@ -17,49 +17,55 @@ body{
 }
 /*입력창 + 투두창*/
 #todo{
-    
+    display: flex;
+    flex-direction: column;
 }
 #todo h1{
     height: 40px;
     line-height: 40px;
+    text-align: center;
     color: #000;
 }
 /*투두 입력란*/
 #input-wrapper{
+    display: flex;
     position: relative;
     margin-bottom: 20px;
-    width: 230px;
+    width: 100%;
 }
 #todo-input{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
     outline: none;
-    padding: 5px 10px;
-    padding-right: 25px;
-    width: 195px;
-    height: 28px;
+    padding: 10px 10px;
+    padding-right: 35px;
+    width: 395px;
     border: none;
     border-bottom: 1px solid #323232;
     background: none;
     font-size: 15px;
     color: #323232;
+    box-sizing: border-box;
 }
 #input-wrapper button{
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: calc(50% - 195px);
     font-size: 35px;
     background: none;
-    color: #f3c8ed;
+    color: #2d2d2dc6;
     border: none;
     cursor: pointer;
 
 }
 /*투두목록 컨테이너*/
 #todo-container{
-    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
-    background-color: #ffffffcf;
+    /* box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px; */
+    /* background-color: #ffffffcf;
     background-image:
     linear-gradient(#eee .1em, transparent .1em);
-    background-size: 100% 1.2em;
+    background-size: 100% 1.2em; */
 }
 
 /*투두 제목*/
@@ -104,14 +110,13 @@ body{
     height: 100%; 
     padding-left: 30px;
     box-sizing: border-box;
-    background-color: rgba(238, 207, 213, 0.492);
+    border-bottom: 1px solid #a5a5a5c6;
 }
 #todo-container #todo-content .button-wrapper{
     display: flex;
     justify-content: space-between;
     width: 20%;
     height: 100%;
-    border: 2px solid rgba(238, 207, 213, 0.492);
     box-sizing: border-box;
 }
 #todo-container #todo-content .button-wrapper button{
