@@ -38,10 +38,12 @@ body{
     display: flex;
     position: relative;
     margin-bottom: 20px;
-    width: 355px;
+    width: 100%;
+    text-align: center;
 }
 #todo-input{
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     margin: 0 auto;
     outline: none;
@@ -58,7 +60,7 @@ body{
 #input-wrapper button{
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: 130px;
     font-size: 35px;
     background: none;
     color: #2d2d2dc6;
