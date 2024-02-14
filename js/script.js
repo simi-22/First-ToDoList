@@ -24,7 +24,8 @@ let filterList = [];
 let todoContent = document.getElementById('todo-content');
 let taskContent = todoInput.value;
 let tabs = document.querySelectorAll('#todo-title li');
-let mode = 'all'
+let mode = 'all';
+let id = 0;
 
 for(let i = 0 ; i<tabs.length ; i++){
     tabs[i].addEventListener('click',function(event){filter(event)});
@@ -44,17 +45,18 @@ submitButton.addEventListener('mousedown',submitTask);
 //할 일 추가버튼을 눌렀을때 실행되는 함수 = task배열에 입력값 추가.
 function submitTask(){
 
-let task = {
-    id : CreateRandomID(),
-    taskContent : todoInput.value,
-    isComplete : false,
-};
+    let task = {
+        id,
+        taskContent : todoInput.value,
+        isComplete : false,
+    };
 
-   //submit 버튼 누르면 task가 taskList에 저장
-   taskList.push(task);
-   console.log(taskList);
-   todoInput.value = "";
-   render();
+    //submit 버튼 누르면 task가 taskList에 저장
+    taskList.push(task);
+    console.log(taskList);
+    todoInput.value = "";
+    id ++
+    render();
 }
 
 //이제 html 넣어줘야함. 배열에 따라서.
@@ -71,25 +73,28 @@ function render(){
     for(let i = 0 ; i < list.length; i++) {
         if(list[i].isComplete == true){
         resultHTML += `
-        <li class="content-inner"> 
-        <div>
-            <p class = "todo-done">${list[i].taskContent}</p>
-        </div>
-        <div class="button-wrapper ">
-            <button onclick ="checkButtonEvent('${list[i].id}')">Check</button>
-            <button onclick="deleteButtonEvent('${list[i].id}')">Delete</button>
-        </div>
-    </li>`} else{
+            <li class="content-inner"> 
+
+                <div>
+                    <input type="checkbox" checked onchange="checkButtonEvent('${list[i].id}')"/>
+                </div>
+                <div>
+                    <p class = "todo-done">${list[i].taskContent}</p>
+                </div>
+                <button onclick="deleteButtonEvent('${list[i].id}')"><i class="fa-sharp fa-solid fa-trash"></i></button>
+
+            </li>`} else{
         resultHTML += `
-        <li class="content-inner"> 
-        <div>
-            <p>${list[i].taskContent}</p>
-        </div>
-        <div class="button-wrapper">
-            <button onclick ="checkButtonEvent('${list[i].id}')">Check</button>
-            <button onclick="deleteButtonEvent('${list[i].id}')">Delete</button>
-        </div>
-    </li>`
+            <li class="content-inner"> 
+
+                <div>
+                    <input type="checkbox" onchange="checkButtonEvent('${list[i].id}')"/>
+                </div>
+                <div>
+                    <p>${list[i].taskContent}</p>
+                </div>
+                <button onclick="deleteButtonEvent('${list[i].id}')"><i class="fa-sharp fa-solid fa-trash"></i></button>
+            </li>`
         }
     }
     document.getElementById("todo-content").innerHTML = resultHTML;
@@ -153,7 +158,7 @@ function filter(event){
 } 
 }
 
-//랜덤아이디 함수
-function CreateRandomID(){
-    return (Date.now().toString(36) + Math.random().toString(36).substr(2, 5)).toUpperCase()
-}
+// //랜덤아이디 함수
+// function CreateRandomID(){
+//     return (Date.now().toString(36) + Math.random().toString(36).substr(2, 5)).toUpperCase()
+// }
