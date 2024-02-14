@@ -16,6 +16,10 @@
 //ongoing, end tab에서도 삭제 적용되게 해보기
 //css완성하기
 
+
+//++빈칸 작성 막기
+//++분류목록 클릭시 구분
+
 let todoInput = document.getElementById("todo-input");
 //inputValue(입력창에 쓴 값)를 배열로 저장..///////
 let submitButton = document.getElementById('submit-button');

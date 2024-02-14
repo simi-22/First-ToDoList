@@ -38,7 +38,7 @@ body{
     display: flex;
     position: relative;
     margin-bottom: 20px;
-    width: 100%;
+    width: 355px;
 }
 #todo-input{
     display: flex;
@@ -58,7 +58,7 @@ body{
 #input-wrapper button{
     position: absolute;
     bottom: 0;
-    right: calc(50% - 150px);
+    right: 0;
     font-size: 35px;
     background: none;
     color: #2d2d2dc6;
