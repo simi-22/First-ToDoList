@@ -35,16 +35,15 @@ body{
 
 /*투두 입력란*/
 #input-wrapper{
-    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
     position: relative;
     margin-bottom: 20px;
-    width: 100%;
+    width: 300px;
     text-align: center;
 }
 #todo-input{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
     margin: 0 auto;
     outline: none;
     padding: 10px 10px;
@@ -60,7 +59,7 @@ body{
 #input-wrapper button{
     position: absolute;
     bottom: 0;
-    right: 130px;
+    right: 0;
     font-size: 35px;
     background: none;
     color: #2d2d2dc6;
@@ -92,6 +91,11 @@ body{
     text-align: start;
     margin-right: 20px;
     font-size: 16px;
+    font-weight: lighter;
+    color: #9c9c9c;
+}
+#todo-container #todo-title li h3{
+    
 }
 /*투두 목록*/
 #todo-container #todo-content{
@@ -140,4 +144,18 @@ text-decoration: line-through;
 color: #ccc;
 box-sizing: border-box;
 border-right: none;
+}
+.showing{
+    color: rgb(0, 0, 0) !important;
+    transform: scale(1.2);
+    font-weight:bold;
+}
+
+@media (max-width: 382px) {
+    #input-wrapper{
+        width: 200px;
+    }
+    #todo-input{
+        width: 200px;
+    }
 }

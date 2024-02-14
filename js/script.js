@@ -143,6 +143,9 @@ function filter(event){
    
     if( mode === "all"){
         render();
+        tabs[1].classList.remove('showing');
+        tabs[2].classList.remove('showing');
+        tabs[0].classList.add('showing');
     }
     
     filterList = [];
@@ -152,12 +155,18 @@ function filter(event){
                 filterList.push(taskList[i]);
             }
         }render();
+        tabs[0].classList.remove('showing');
+        tabs[2].classList.remove('showing');
+        tabs[1].classList.add('showing');
     }else if(mode === "done"){
         for(let i = 0; i < taskList.length; i++){
             if(taskList[i].isComplete == true){
                 filterList.push(taskList[i]);
             }
-    }render();
+        }render();
+        tabs[0].classList.remove('showing');
+        tabs[1].classList.remove('showing');
+        tabs[2].classList.add('showing');
     
 } 
 }
