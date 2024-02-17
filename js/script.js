@@ -189,9 +189,6 @@ function filter(event){
    
     if( mode === "all"){
         render();
-        tabs[1].classList.remove('showing');
-        tabs[2].classList.remove('showing');
-        tabs[0].classList.add('showing');
     }
     
     filterList = [];
@@ -201,20 +198,31 @@ function filter(event){
                 filterList.push(taskList[i]);
             }
         }render();
-        tabs[0].classList.remove('showing');
-        tabs[2].classList.remove('showing');
-        tabs[1].classList.add('showing');
+      
     }else if(mode === "done"){
         for(let i = 0; i < taskList.length; i++){
             if(taskList[i].isComplete == true){
                 filterList.push(taskList[i]);
             }
         }render();
-        tabs[0].classList.remove('showing');
-        tabs[1].classList.remove('showing');
-        tabs[2].classList.add('showing');
+        
     
 } 
+}
+
+//탭 효과
+for (let i = 0; i < tabs.length; i++) {
+    tabs[i].addEventListener('click', function(event) {
+        // 클릭된 탭에만 'showing' 클래스 추가
+        for (let j = 0; j < tabs.length; j++) {
+            if (tabs[j] === event.currentTarget) {
+                tabs[j].classList.add('showing');
+            } else {
+                tabs[j].classList.remove('showing');
+            }
+        }
+        filter(event);
+    });
 }
 
 // //랜덤아이디 함수
