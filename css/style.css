@@ -139,6 +139,11 @@ body{
     color: #9c9c9c;
 }
 
+.content-inner button:first-of-type {
+    margin-right: 15px;
+}
+
+
 .todo-done{
 text-decoration: line-through;
 color: #ccc;
