@@ -126,10 +126,9 @@ function taskEditing(taskId) {
     if(!item.isCompleted){
         let newValue = prompt(`변경사항을 입력하세요.`)
     
-        // 사용자가 값을 입력하지 않거나 취소를 누른 경우 처리
+        // 사용자가 값을 입력하지 않았을때
         newValue = newValue.trim()
         if (newValue == null || newValue == '') {
-            // 입력이 취소되었거나 공백 문자열이면 아무것도 하지 않음
             alert('입력문자가 없습니다.')
             return;
         }
